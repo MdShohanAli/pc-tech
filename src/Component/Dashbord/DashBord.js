@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, PieChart, Pie } from 'recharts';
 const data = [{
     "month": "Mar",
     "investment": 10000,
@@ -41,17 +41,32 @@ const data = [{
 
 const DashBord = () => {
     return (
-        <div className=' justify-center items-center' >
-            <LineChart className='mx-auto' width={500} height={300} data={data}>
-                <Line type="monotone" dataKey="revenue" stroke="#8884d8" />
-                <Line type="monotone" dataKey="sell" stroke="#8884d8" />
-                <CartesianGrid stroke="#ccc" />
-                <Tooltip />
-                <XAxis dataKey="month" />
+        <div className='flex' >
+            <div className=' ml-10 pt-10'  >
+                <LineChart className='mx-auto' width={500} height={300} data={data}>
+                    <Line type="monotone" dataKey="revenue" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="sell" stroke="#8884d8" />
+                    <CartesianGrid stroke="#ccc" />
+                    <Tooltip />
+                    <XAxis dataKey="month" />
 
-                <YAxis dataKey="investment" />
-            </LineChart>
-            <h2 className='text-center' > LineChart  </h2>
+                    <YAxis dataKey="investment" />
+                </LineChart>
+                <h2 className='text-center' > Line Chart  </h2>
+            </div>
+
+            <div>
+                <PieChart width={900} height={350}>
+                    <Pie data={data} dataKey="sell" nameKey="month" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
+                    <Pie data={data} dataKey="revenue" nameKey="month" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
+                    <Pie data={data} dataKey="investment" nameKey="month" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca5d" label />
+                    <Tooltip />
+
+                </PieChart>
+                <h2 className='text-center' > Bar Chart  </h2>
+            </div>
+
+
         </div>
     );
 };
