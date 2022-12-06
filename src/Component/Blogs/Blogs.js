@@ -3,7 +3,7 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div>
-            <h2>Blog</h2>
+            <h2 className='text-center' >Come in soon Blog  </h2>
         </div>
     );
 };
