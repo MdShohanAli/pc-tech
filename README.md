@@ -1,10 +1,13 @@
-# Getting Started with Create React App
+# tech pc
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Use react router active router 
+2 . Design Home page use tailwind css 
+3 . rechart library make pie chart & line chart
+ 
 
-## Available Scripts
+## Live Website Link
+[tech pc](https://stalwart-shortbread-0a2882.netlify.app/)
 
-In the project directory, you can run:
 
 ### `npm start`
 
